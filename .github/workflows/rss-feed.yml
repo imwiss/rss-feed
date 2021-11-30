@@ -1,0 +1,60 @@
+name: GitHub Changelog RSS Feed
+on:
+  schedule:
+    # At every :30
+    - cron: 30 * * * *
+
+  workflow_dispatch:
+jobs:
+  github-changelog:
+    name: github-changelog-rss
+    runs-on: ubuntu-latest
+    steps:
+      - uses: guilhem/rss-issues-action@0.4.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          feed: "https://github.blog/changelog/feed/"
+          prefix: "[GitHub]"
+          characterLimit: "255"
+          dry-run: "false"
+          lastTime: "92h"
+          labels: "github"
+  netflix-changelog:
+    name: netflix-changelog-rss
+    runs-on: ubuntu-latest
+    steps:
+      - uses: guilhem/rss-issues-action@0.4.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          feed: "https://netflixtechblog.com/"
+          prefix: "[Netflix]"
+          characterLimit: "255"
+          dry-run: "false"
+          lastTime: "92h"
+          labels: "engineering"
+  slack-changelog:
+    name: slack-changelog-rss
+    runs-on: ubuntu-latest
+    steps:
+      - uses: guilhem/rss-issues-action@0.4.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          feed: "https://slack.engineering/"
+          prefix: "[Slack]"
+          characterLimit: "255"
+          dry-run: "false"
+          lastTime: "92h"
+          labels: "engineering"
+  lethain-changelog:
+    name: lethain-changelog-rss
+    runs-on: ubuntu-latest
+    steps:
+      - uses: guilhem/rss-issues-action@0.4.0
+        with:
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
+          feed: "https://lethain.com/"
+          prefix: "[Lethain]"
+          characterLimit: "255"
+          dry-run: "false"
+          lastTime: "92h"
+          labels: "management"
