@@ -26,7 +26,7 @@ jobs:
       - uses: guilhem/rss-issues-action@0.4.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          feed: "https://netflixtechblog.com/"
+          feed: "https://netflixtechblog.com/feed"
           prefix: "[Netflix]"
           characterLimit: "255"
           dry-run: "false"
@@ -39,7 +39,7 @@ jobs:
       - uses: guilhem/rss-issues-action@0.4.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          feed: "https://slack.engineering/"
+          feed: "https://slack.engineering/feed/"
           prefix: "[Slack]"
           characterLimit: "255"
           dry-run: "false"
@@ -52,7 +52,7 @@ jobs:
       - uses: guilhem/rss-issues-action@0.4.0
         with:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          feed: "https://lethain.com/"
+          feed: "https://lethain.com/feeds.xml"
           prefix: "[Lethain]"
           characterLimit: "255"
           dry-run: "false"
