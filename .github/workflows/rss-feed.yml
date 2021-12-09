@@ -28,7 +28,7 @@ jobs:
           repo-token: ${{ secrets.GITHUB_TOKEN }}
           feed: "https://netflixtechblog.com/feed"
           prefix: "[Netflix]"
-          characterLimit: "255"
+          characterLimit: "512"
           dry-run: "false"
           lastTime: "92h"
           labels: "engineering"
